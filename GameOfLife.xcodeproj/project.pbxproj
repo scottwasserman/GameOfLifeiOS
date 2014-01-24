@@ -23,6 +23,7 @@
 		A41559801891D315002AE8DA /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A415597F1891D315002AE8DA /* GameOfLifeTests.m */; };
 		A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A4155998189215CC002AE8DA /* GameOfLifeGrid.m */; };
 		A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415599A189215CC002AE8DA /* MainScreenViewController.m */; };
+		A415599E18922C49002AE8DA /* skull-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A415599D18922C49002AE8DA /* skull-icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A4155998189215CC002AE8DA /* GameOfLifeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeGrid.m; sourceTree = "<group>"; };
 		A4155999189215CC002AE8DA /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		A415599A189215CC002AE8DA /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
+		A415599D18922C49002AE8DA /* skull-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skull-icon.png"; path = "GameOfLife/skull-icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		A41559451891D314002AE8DA = {
 			isa = PBXGroup;
 			children = (
+				A415599D18922C49002AE8DA /* skull-icon.png */,
 				A41559571891D315002AE8DA /* GameOfLife */,
 				A41559791891D315002AE8DA /* GameOfLifeTests */,
 				A41559501891D315002AE8DA /* Frameworks */,
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A41559681891D315002AE8DA /* Main_iPad.storyboard in Resources */,
+				A415599E18922C49002AE8DA /* skull-icon.png in Resources */,
 				A415596D1891D315002AE8DA /* Images.xcassets in Resources */,
 				A41559651891D315002AE8DA /* Main_iPhone.storyboard in Resources */,
 				A415595C1891D315002AE8DA /* InfoPlist.strings in Resources */,

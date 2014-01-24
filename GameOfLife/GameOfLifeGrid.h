@@ -21,5 +21,7 @@
 -(id)initWithRows:(int)numberOfRows columns:(int)numberOfColumns squareSize:(int)squareSize andFrame:(CGRect)frame;
 -(UIView *)getGridView;
 -(void)randomize;
-
+-(void)nextGeneration;
+-(void)killCellAtRow:(int)row column:(int)column;
+-(void)reviveCellAtRow:(int)row column:(int)column;
 @end

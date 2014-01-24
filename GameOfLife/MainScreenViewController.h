@@ -15,7 +15,10 @@
     CGFloat sizeOfSquare;
     CGFloat numberOfHorizontalSquares;
     CGFloat numberOfVerticalSquares;
+    int deathBoxSize;
+    UIImageView *deathBoxView;
     UIButton *buttonOverlay;
+    BOOL running;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
