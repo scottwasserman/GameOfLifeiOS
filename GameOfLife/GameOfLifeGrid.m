@@ -21,6 +21,7 @@
         sizeOfSquare = squareSize;
         gridArray = [[NSMutableArray alloc] initWithCapacity:(rows*columns)];
         gridView = [[UIView alloc] initWithFrame:frame];
+        randomFactor = 4;
         [self initArray];
     }
     return self;
@@ -44,12 +45,11 @@
 
 -(void)randomize
 {
-    srandom(time(NULL));
     for (int y=0;y < columns;y++)
     {
         for (int x=0;x < rows;x++)
         {
-            int on = arc4random() % 4;
+            int on = arc4random() % randomFactor;
             
             if (on == 0)
             {

@@ -15,6 +15,7 @@
     int columns;
     int sizeOfSquare;
     UIView *gridView;
+    int randomFactor;
 }
 
 -(id)initWithRows:(int)numberOfRows columns:(int)numberOfColumns squareSize:(int)squareSize andFrame:(CGRect)frame;

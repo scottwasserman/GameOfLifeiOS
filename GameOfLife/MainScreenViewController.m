@@ -34,6 +34,11 @@
     numberOfVerticalSquares = self.mainView.frame.size.height/sizeOfSquare;
     
     [self initGrid];
+    buttonOverlay = [UIButton buttonWithType:UIButtonTypeCustom];
+    buttonOverlay.frame = self.mainView.frame;
+    [buttonOverlay addTarget:self action:@selector(randomize) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainView addSubview:buttonOverlay];
+    
     //[self fillGridWithRandomViews];
     //[self updateDisplay];
 }
@@ -45,6 +50,10 @@
     [grid randomize];
 }
 
+- (void)randomize
+{
+    [grid randomize];
+}
 
 /*
 - (void)fillGridWithRandomViews
@@ -116,4 +125,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)buttonOverlayTouchUpInside:(UIButton *)sender
+{
+    [grid randomize];
+}
 @end

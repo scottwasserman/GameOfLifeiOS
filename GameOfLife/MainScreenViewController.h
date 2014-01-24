@@ -15,6 +15,7 @@
     CGFloat sizeOfSquare;
     CGFloat numberOfHorizontalSquares;
     CGFloat numberOfVerticalSquares;
+    UIButton *buttonOverlay;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
