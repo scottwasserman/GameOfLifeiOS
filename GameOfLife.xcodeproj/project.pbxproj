@@ -21,9 +21,8 @@
 		A41559761891D315002AE8DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41559551891D315002AE8DA /* UIKit.framework */; };
 		A415597E1891D315002AE8DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A415597C1891D315002AE8DA /* InfoPlist.strings */; };
 		A41559801891D315002AE8DA /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A415597F1891D315002AE8DA /* GameOfLifeTests.m */; };
-		A415598B1891D59B002AE8DA /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415598A1891D59B002AE8DA /* MainScreenViewController.m */; };
-		A41559911891DBC5002AE8DA /* Array2D.m in Sources */ = {isa = PBXBuildFile; fileRef = A41559901891DBC5002AE8DA /* Array2D.m */; };
-		A415599618920D90002AE8DA /* GameOfLifeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A415599518920D90002AE8DA /* GameOfLifeGrid.m */; };
+		A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A4155998189215CC002AE8DA /* GameOfLifeGrid.m */; };
+		A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415599A189215CC002AE8DA /* MainScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +54,10 @@
 		A415597B1891D315002AE8DA /* GameOfLifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameOfLifeTests-Info.plist"; sourceTree = "<group>"; };
 		A415597D1891D315002AE8DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A415597F1891D315002AE8DA /* GameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeTests.m; sourceTree = "<group>"; };
-		A41559891891D59B002AE8DA /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScreenViewController.h; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/MainScreenViewController.h"; sourceTree = "<group>"; };
-		A415598A1891D59B002AE8DA /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScreenViewController.m; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/MainScreenViewController.m"; sourceTree = "<group>"; };
-		A415598F1891DBC5002AE8DA /* Array2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Array2D.h; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/Array2D.h"; sourceTree = "<group>"; };
-		A41559901891DBC5002AE8DA /* Array2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Array2D.m; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/Array2D.m"; sourceTree = "<group>"; };
-		A415599418920D90002AE8DA /* GameOfLifeGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOfLifeGrid.h; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/GameOfLifeGrid.h"; sourceTree = "<group>"; };
-		A415599518920D90002AE8DA /* GameOfLifeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOfLifeGrid.m; path = "../../../Aiden & Dad's Game of Life/GameOfLife/GameOfLife/GameOfLifeGrid.m"; sourceTree = "<group>"; };
+		A4155997189215CC002AE8DA /* GameOfLifeGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOfLifeGrid.h; sourceTree = "<group>"; };
+		A4155998189215CC002AE8DA /* GameOfLifeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeGrid.m; sourceTree = "<group>"; };
+		A4155999189215CC002AE8DA /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
+		A415599A189215CC002AE8DA /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,18 +117,16 @@
 		A41559571891D315002AE8DA /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				A4155997189215CC002AE8DA /* GameOfLifeGrid.h */,
+				A4155998189215CC002AE8DA /* GameOfLifeGrid.m */,
+				A4155999189215CC002AE8DA /* MainScreenViewController.h */,
+				A415599A189215CC002AE8DA /* MainScreenViewController.m */,
 				A41559601891D315002AE8DA /* AppDelegate.h */,
 				A41559611891D315002AE8DA /* AppDelegate.m */,
 				A41559631891D315002AE8DA /* Main_iPhone.storyboard */,
 				A41559661891D315002AE8DA /* Main_iPad.storyboard */,
 				A415596C1891D315002AE8DA /* Images.xcassets */,
 				A41559581891D315002AE8DA /* Supporting Files */,
-				A41559891891D59B002AE8DA /* MainScreenViewController.h */,
-				A415598A1891D59B002AE8DA /* MainScreenViewController.m */,
-				A415598F1891DBC5002AE8DA /* Array2D.h */,
-				A41559901891DBC5002AE8DA /* Array2D.m */,
-				A415599418920D90002AE8DA /* GameOfLifeGrid.h */,
-				A415599518920D90002AE8DA /* GameOfLifeGrid.m */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -263,10 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A415598B1891D59B002AE8DA /* MainScreenViewController.m in Sources */,
+				A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */,
+				A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */,
 				A41559621891D315002AE8DA /* AppDelegate.m in Sources */,
-				A41559911891DBC5002AE8DA /* Array2D.m in Sources */,
-				A415599618920D90002AE8DA /* GameOfLifeGrid.m in Sources */,
 				A415595E1891D315002AE8DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +480,7 @@
 				A41559851891D315002AE8DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A41559861891D315002AE8DA /* Build configuration list for PBXNativeTarget "GameOfLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +489,7 @@
 				A41559881891D315002AE8DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
