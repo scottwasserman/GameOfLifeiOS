@@ -11,6 +11,7 @@
 @interface GameOfLifeGrid : NSObject
 {
     NSMutableArray *gridArray;
+    NSMutableArray *updateArray;
     int rows;
     int columns;
     int sizeOfSquare;

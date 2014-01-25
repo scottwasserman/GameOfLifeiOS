@@ -67,6 +67,8 @@
 
 - (void)nextGeneration
 {
+    //updateArray = [NSMutableArray arrayWithArray:gridArray];
+    
     for (int y=0;y < columns-2;y++)
     {
         for (int x=0;x < rows-2;x++)
@@ -74,7 +76,22 @@
             [self nextGenerationForGridAtRow:x column:y];
         }
     }
-
+    
+    /*for (int y=0;y < columns-2;y++)
+    {
+        for (int x=0;x < rows-2;x++)
+        {
+            if ([self cellIsAliveAtRow:x column:y andArray:updateArray])
+            {
+                [self reviveCellAtRow:x column:y];
+            }
+            else
+            {
+              
+                [self killCellAtRow:x column:y];
+            }
+        }
+    }*/
 }
 
 - (void)nextGenerationForGridAtRow:(int)row column:(int)column
@@ -141,24 +158,44 @@
     }
 }
 
+-(void)birthCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = NO;
+}
+
+-(void)reviveCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = NO;
+}
+
+-(void)killCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = YES;
+}
+
+-(BOOL)cellIsAliveAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    return !((UIView*)[array objectAtIndex:row + (column * rows)]).hidden;
+}
+
 -(void)birthCellAtRow:(int)row column:(int)column
 {
-    ((UIView*)[gridArray objectAtIndex:row + (column * rows)]).hidden = NO;
+    [self birthCellAtRow:row column:column andArray:gridArray];
 }
 
 -(void)reviveCellAtRow:(int)row column:(int)column
 {
-    ((UIView*)[gridArray objectAtIndex:row + (column * rows)]).hidden = NO;
+    [self reviveCellAtRow:row column:column andArray:gridArray];
 }
 
 -(void)killCellAtRow:(int)row column:(int)column
 {
-    ((UIView*)[gridArray objectAtIndex:row + (column * rows)]).hidden = YES;
+    [self killCellAtRow:row column:column andArray:gridArray];
 }
 
 -(BOOL)cellIsAliveAtRow:(int)row column:(int)column
 {
-    return !((UIView*)[gridArray objectAtIndex:row + (column * rows)]).hidden;
+    return [self cellIsAliveAtRow:row column:column andArray:gridArray];
 }
 
 -(UIView *)getGridView
@@ -166,15 +203,6 @@
     return gridView;
 }
 
--(void)setObject:(id)currObject inRow:(int)currRow andColumn:(int)currColumn
-{
-    [gridArray replaceObjectAtIndex:(currRow * currColumn) withObject:currObject];
-}
-
--(id)getObjectInRow:(int)currRow andColumn:(int)currColumn
-{
-    return [gridArray objectAtIndex:(currRow * currColumn)];
-}
 
 
 @end
