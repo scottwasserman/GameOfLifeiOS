@@ -17,9 +17,10 @@
     int sizeOfSquare;
     UIView *gridView;
     int randomFactor;
+    int age;
 }
 
--(id)initWithRows:(int)numberOfRows columns:(int)numberOfColumns squareSize:(int)squareSize andFrame:(CGRect)frame;
+-(id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame;
 -(UIView *)getGridView;
 -(void)randomize;
 -(void)nextGeneration;

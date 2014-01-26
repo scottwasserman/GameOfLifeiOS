@@ -8,135 +8,142 @@
 
 #import "GameOfLifeGrid.h"
 #include <stdlib.h>
+#import "Cell.h"
 
 @implementation GameOfLifeGrid
 
--(id)initWithRows:(int)numberOfRows columns:(int)numberOfColumns squareSize:(int)squareSize andFrame:(CGRect)frame
+-(id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame
 {
     self = [super init];
     if (self)
     {
-        rows = numberOfRows;
-        columns = numberOfColumns;
-        sizeOfSquare = squareSize;
-        gridArray = [[NSMutableArray alloc] initWithCapacity:(rows*columns)];
         gridView = [[UIView alloc] initWithFrame:frame];
+        sizeOfSquare = squareSize;
+        rows = trunc(gridView.frame.size.width/sizeOfSquare);
+        columns = trunc(gridView.frame.size.height/sizeOfSquare);
+        gridArray = [[NSMutableArray alloc] initWithCapacity:(rows*columns)];
         randomFactor = 10;
-        [self initArray];
+        [self buildCellArray];
     }
     return self;
 }
 
--(void)initArray
-{
-    for (int y=0;y < columns;y++)
-    {
-        for (int x=0;x < rows;x++)
-        {
-            UIView *square = [[UIView alloc] initWithFrame:CGRectMake(x * sizeOfSquare, y * sizeOfSquare, sizeOfSquare, sizeOfSquare)];
-            square.backgroundColor = [UIColor grayColor];
-            square.hidden = YES;
+#pragma mark -
+#pragma mark grid lifecycle methods
 
-            [gridView addSubview:square];
-            [gridArray addObject:square];
+-(void)buildCellArray
+{
+    age = 0;
+    
+    for (int column=0;column < columns;column++)
+    {
+        for (int row=0;row < rows;row++)
+        {
+            // Create new cell
+            Cell *cell = [[Cell alloc] initWithFrame:CGRectMake(row * sizeOfSquare, column * sizeOfSquare, sizeOfSquare, sizeOfSquare) andColor:black];
+            [gridView addSubview:[cell getView]];
+            [gridArray addObject:cell];
         }
     }
 }
 
-
 -(void)randomize
 {
-    for (int y=0;y < columns;y++)
+    for (int column=0;column < columns;column++)
     {
-        for (int x=0;x < rows;x++)
+        for (int row=0;row < rows;row++)
         {
             int on = arc4random() % randomFactor;
             
             if (on == 0)
             {
-                [self birthCellAtRow:x column:y];
+                [self birthCellAtRow:row column:column];
             }
             else
             {
-                [self killCellAtRow:x column:y];
+                //[self killCellAtRow:x column:y];
             }
         }
     }
 }
 
-
 - (void)nextGeneration
 {
-    //updateArray = [NSMutableArray arrayWithArray:gridArray];
-    
-    for (int y=0;y < columns-2;y++)
+    for (int column=0;column < columns-2;column++)
     {
-        for (int x=0;x < rows-2;x++)
+        for (int row=0;row < rows-2;row++)
         {
-            [self nextGenerationForGridAtRow:x column:y];
+            [self nextGenerationForGridAtRow:row column:column];
         }
     }
+}
+
+#pragma mark -
+#pragma mark cell math methods
+
+/*
+    Calculation for center cell at grid that starts at top left
+    column
+    -------
+row | | | |
+    |-----|
+    | |X| |
+    |-----|
+    | | | |
+    -------
+ 
+    eg if center cell is at 1,1 then the grid would start at 0,0
+*/
+- (int)numberOfLiveNeighborsForGridAtRow:(int)row column:(int)column
+{
+    int numberOfLiveNeighbors = 0;
     
-    /*for (int y=0;y < columns-2;y++)
+    // Row 1
+    if ([self cellIsAliveAtRow:row column:column])
     {
-        for (int x=0;x < rows-2;x++)
-        {
-            if ([self cellIsAliveAtRow:x column:y andArray:updateArray])
-            {
-                [self reviveCellAtRow:x column:y];
-            }
-            else
-            {
-              
-                [self killCellAtRow:x column:y];
-            }
-        }
-    }*/
+        numberOfLiveNeighbors++;
+    }
+    if ([self cellIsAliveAtRow:row+1 column:column])
+    {
+        numberOfLiveNeighbors++;
+    }
+    if ([self cellIsAliveAtRow:row+2 column:column])
+    {
+        numberOfLiveNeighbors++;
+    }
+    // Row 2
+    if ([self cellIsAliveAtRow:row column:column+1])
+    {
+        numberOfLiveNeighbors++;
+    }
+    if ([self cellIsAliveAtRow:row+2 column:column+1])
+    {
+        numberOfLiveNeighbors++;
+    }
+    // Row 3
+    if ([self cellIsAliveAtRow:row column:column+2])
+    {
+        numberOfLiveNeighbors++;
+    }
+    if ([self cellIsAliveAtRow:row+1 column:column+2])
+    {
+        numberOfLiveNeighbors++;
+    }
+    if ([self cellIsAliveAtRow:row+2 column:column+2])
+    {
+        numberOfLiveNeighbors++;
+    }
+    
+    return numberOfLiveNeighbors;
 }
 
 - (void)nextGenerationForGridAtRow:(int)row column:(int)column
 {
-    int numberOfLiveNeighbors = 0;
-    
     // TODO: Deal with the last grids somehow
     
     if ((row + 2 <= rows) && (column + 2 <= columns))
     {
-        // Row 1
-        if ([self cellIsAliveAtRow:row column:column])
-        {
-            numberOfLiveNeighbors++;
-        }
-        if ([self cellIsAliveAtRow:row+1 column:column])
-        {
-            numberOfLiveNeighbors++;
-        }
-        if ([self cellIsAliveAtRow:row+2 column:column])
-        {
-            numberOfLiveNeighbors++;
-        }
-        // Row 2
-        if ([self cellIsAliveAtRow:row column:column+1])
-        {
-            numberOfLiveNeighbors++;
-        }
-        if ([self cellIsAliveAtRow:row+2 column:column+1])
-        {
-            numberOfLiveNeighbors++;
-        }
-        // Row 3
-        if ([self cellIsAliveAtRow:row column:column+2])
-        {
-            numberOfLiveNeighbors++;
-        }
-        if ([self cellIsAliveAtRow:row+1 column:column+2])
-        {
-            numberOfLiveNeighbors++;
-        }
-        if ([self cellIsAliveAtRow:row+2 column:column+2])
-        {
-            numberOfLiveNeighbors++;
-        }
+        int numberOfLiveNeighbors = [self numberOfLiveNeighborsForGridAtRow:row column:column];
         
         BOOL currentCellIsAlive = [self cellIsAliveAtRow:row+1 column:column+1];
         
@@ -147,6 +154,11 @@
             {
                 [self killCellAtRow:row+1 column:column+1];
             }
+            else
+            {
+                [self ageCellAtRow:row+1 column:column+1];
+                
+            }
         }
         else
         {
@@ -156,31 +168,47 @@
             }
         }
     }
+    
+    age++;
 }
+
+
+#pragma mark -
+#pragma mark cell lifecycle methods
 
 -(void)birthCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
-    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = NO;
+    [((Cell*)[array objectAtIndex:row + (column * rows)]) birth];
+}
+
+-(void)ageCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    [((Cell*)[array objectAtIndex:row + (column * rows)]) age];
 }
 
 -(void)reviveCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
-    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = NO;
+    [((Cell*)[array objectAtIndex:row + (column * rows)]) revive];
 }
 
 -(void)killCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
-    ((UIView*)[array objectAtIndex:row + (column * rows)]).hidden = YES;
+    [((Cell*)[array objectAtIndex:row + (column * rows)]) kill];
 }
 
 -(BOOL)cellIsAliveAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
-    return !((UIView*)[array objectAtIndex:row + (column * rows)]).hidden;
+    return [((Cell*)[array objectAtIndex:row + (column * rows)]) isAlive];
 }
 
 -(void)birthCellAtRow:(int)row column:(int)column
 {
     [self birthCellAtRow:row column:column andArray:gridArray];
+}
+
+-(void)ageCellAtRow:(int)row column:(int)column
+{
+    [self ageCellAtRow:row column:column andArray:gridArray];
 }
 
 -(void)reviveCellAtRow:(int)row column:(int)column
@@ -197,6 +225,9 @@
 {
     return [self cellIsAliveAtRow:row column:column andArray:gridArray];
 }
+
+#pragma mark -
+#pragma mark grid view methods
 
 -(UIView *)getGridView
 {

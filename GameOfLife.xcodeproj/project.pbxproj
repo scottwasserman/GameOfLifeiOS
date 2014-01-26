@@ -24,6 +24,7 @@
 		A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A4155998189215CC002AE8DA /* GameOfLifeGrid.m */; };
 		A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415599A189215CC002AE8DA /* MainScreenViewController.m */; };
 		A415599E18922C49002AE8DA /* skull-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A415599D18922C49002AE8DA /* skull-icon.png */; };
+		A4C079651893FF4900828554 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C079641893FF4900828554 /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		A4155999189215CC002AE8DA /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		A415599A189215CC002AE8DA /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 		A415599D18922C49002AE8DA /* skull-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skull-icon.png"; path = "GameOfLife/skull-icon.png"; sourceTree = "<group>"; };
+		A4C079631893FF4900828554 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		A4C079641893FF4900828554 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			children = (
 				A4155997189215CC002AE8DA /* GameOfLifeGrid.h */,
 				A4155998189215CC002AE8DA /* GameOfLifeGrid.m */,
+				A4C079631893FF4900828554 /* Cell.h */,
+				A4C079641893FF4900828554 /* Cell.m */,
 				A4155999189215CC002AE8DA /* MainScreenViewController.h */,
 				A415599A189215CC002AE8DA /* MainScreenViewController.m */,
 				A41559601891D315002AE8DA /* AppDelegate.h */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C079651893FF4900828554 /* Cell.m in Sources */,
 				A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */,
 				A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */,
 				A41559621891D315002AE8DA /* AppDelegate.m in Sources */,

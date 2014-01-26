@@ -30,11 +30,66 @@
     [super viewDidLoad];
     
     sizeOfSquare = 3;
-    numberOfHorizontalSquares = self.mainView.frame.size.width/sizeOfSquare;
-    numberOfVerticalSquares = self.mainView.frame.size.height/sizeOfSquare;
+    [self buildLifeGrid];
+    [self initDeathBox];
+    
+    [self startRunning];
+}
+
+#pragma mark -
+#pragma mark grid lifecycle methods
+
+- (void)buildLifeGrid
+{
+    grid = [[GameOfLifeGrid alloc] initWithSquareSize:sizeOfSquare andFrame:self.mainView.frame];
+    [self.mainView addSubview:[grid getGridView]];
+    [grid randomize];
+}
+
+- (void)startRunning
+{
+    if (!running)
+    {
+        running = YES;
+        [self nextGeneration];
+    }
+}
+
+- (void)stopRunning
+{
+    running = NO;
+}
+
+- (void)nextGeneration
+{
+    [grid nextGeneration];
+    if (running)
+    {
+        [self performSelector:@selector(nextGeneration) withObject:nil afterDelay:0.1];
+    }
+}
+
+- (void)toggleRunning
+{
+    if (running)
+    {
+        running = NO;
+    }
+    else
+    {
+        running = YES;
+        [self nextGeneration];
+    }
+}
+
+
+#pragma mark -
+#pragma mark DeathBox-related methods
+
+- (void)initDeathBox
+{
     deathBoxSize = 40;
     
-    [self initGrid];
     buttonOverlay = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonOverlay.frame = self.mainView.frame;
     //[buttonOverlay addTarget:self action:@selector(toggleRunning) forControlEvents:UIControlEventTouchUpInside];
@@ -42,13 +97,11 @@
     [buttonOverlay addTarget:self action:@selector(dragMoving:withEvent:) forControlEvents: UIControlEventTouchDragInside];
     [buttonOverlay addTarget:self action:@selector(dragEnded:withEvent:) forControlEvents: UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
     [self.mainView addSubview:buttonOverlay];
-
+    
     deathBoxView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"skull-icon.png"]];
     deathBoxView.frame = CGRectMake(0,0,deathBoxSize,deathBoxSize);
     deathBoxView.hidden = YES;
     [self.mainView addSubview:deathBoxView];
-    
-    [self startRunning];
 }
 
 - (void)dragBegan:(UIControl *)c withEvent:ev
@@ -111,49 +164,6 @@
 {
     deathBoxView.hidden = YES;
     [self startRunning];
-}
-
-- (void)startRunning
-{
-    if (!running)
-    {
-        running = YES;
-        [self nextGeneration];
-    }
-}
-
-- (void)stopRunning
-{
-    running = NO;
-}
-
-- (void)nextGeneration
-{
-    [grid nextGeneration];
-    if (running)
-    {
-        [self performSelector:@selector(nextGeneration) withObject:nil afterDelay:0.1];
-    }
-}
-
-- (void)toggleRunning
-{
-    if (running)
-    {
-        running = NO;
-    }
-    else
-    {
-        running = YES;
-        [self nextGeneration];
-    }
-}
-
-- (void)initGrid
-{
-    grid = [[GameOfLifeGrid alloc] initWithRows:numberOfHorizontalSquares columns:numberOfVerticalSquares squareSize:sizeOfSquare andFrame:self.mainView.frame];
-    [self.mainView addSubview:[grid getGridView]];
-    [grid randomize];
 }
 
 - (void)didReceiveMemoryWarning
