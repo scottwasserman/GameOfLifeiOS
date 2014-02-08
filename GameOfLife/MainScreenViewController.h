@@ -8,17 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "GameOfLifeGrid.h"
+#import "SlideOutToolStrip.h"
 
 @interface MainScreenViewController : UIViewController
 {
     GameOfLifeGrid *grid;
+    SlideOutToolStrip *toolStrip;
     CGFloat sizeOfSquare;
+    UIView *overlayView;
     CGFloat numberOfHorizontalSquares;
     CGFloat numberOfVerticalSquares;
+    UIImageView *rightArrow;
     int deathBoxSize;
+    int deathBoxOffset;
     UIImageView *deathBoxView;
-    UIButton *buttonOverlay;
-    BOOL running;
+    UIButton *deathBoxButtonOverlay;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;

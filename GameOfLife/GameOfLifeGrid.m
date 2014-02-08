@@ -24,6 +24,7 @@
         gridArray = [[NSMutableArray alloc] initWithCapacity:(rows*columns)];
         randomFactor = 10;
         [self buildCellArray];
+        growing = NO;
     }
     return self;
 }
@@ -69,12 +70,17 @@
 
 - (void)nextGeneration
 {
-    for (int column=0;column < columns-2;column++)
+    if (growing)
     {
-        for (int row=0;row < rows-2;row++)
+        for (int column=0;column < columns-2;column++)
         {
-            [self nextGenerationForGridAtRow:row column:column];
+            for (int row=0;row < rows-2;row++)
+            {
+                [self nextGenerationForGridAtRow:row column:column];
+            }
         }
+        
+        age++;
     }
 }
 
@@ -168,13 +174,26 @@ row | | | |
             }
         }
     }
-    
-    age++;
 }
 
 
 #pragma mark -
 #pragma mark cell lifecycle methods
+
+- (void)startGrowing
+{
+    growing = YES;
+}
+
+- (void)stopGrowing
+{
+    growing = NO;
+}
+
+- (int)getAge
+{
+    return age;
+}
 
 -(void)birthCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {

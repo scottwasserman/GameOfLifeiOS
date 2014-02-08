@@ -33,6 +33,7 @@ typedef enum {
 -(CellColor)getCurrentColor;
 -(CellColor)getInitialColor;
 -(UIView *)getView;
+
 -(BOOL)isAlive;
 -(void)birth;
 -(void)kill;

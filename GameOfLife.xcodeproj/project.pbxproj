@@ -23,8 +23,26 @@
 		A41559801891D315002AE8DA /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A415597F1891D315002AE8DA /* GameOfLifeTests.m */; };
 		A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A4155998189215CC002AE8DA /* GameOfLifeGrid.m */; };
 		A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415599A189215CC002AE8DA /* MainScreenViewController.m */; };
-		A415599E18922C49002AE8DA /* skull-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A415599D18922C49002AE8DA /* skull-icon.png */; };
+		A4179E9B189B43D8005420FB /* NSData+Cipher.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E8A189B43D8005420FB /* NSData+Cipher.m */; };
+		A4179E9C189B43D8005420FB /* NSString+NiftyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E8C189B43D8005420FB /* NSString+NiftyAdditions.m */; };
+		A4179E9D189B43D8005420FB /* UIColor+Hexes.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E8E189B43D8005420FB /* UIColor+Hexes.m */; };
+		A4179E9E189B43D8005420FB /* UIDevice+SimulatorCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E90189B43D8005420FB /* UIDevice+SimulatorCheck.m */; };
+		A4179E9F189B43D8005420FB /* UILabel+TextMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E92189B43D8005420FB /* UILabel+TextMagic.m */; };
+		A4179EA0189B43D8005420FB /* UIView+FrameMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E94189B43D8005420FB /* UIView+FrameMagic.m */; };
+		A4179EA1189B43D8005420FB /* iOS7MigrationBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E97189B43D8005420FB /* iOS7MigrationBuddy.m */; };
+		A4179EA2189B43D8005420FB /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E99189B43D8005420FB /* LocationHelper.m */; };
 		A4C079651893FF4900828554 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C079641893FF4900828554 /* Cell.m */; };
+		A4EB6BAE18A548C50090F2A5 /* beaker.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BA918A548C50090F2A5 /* beaker.png */; };
+		A4EB6BAF18A548C50090F2A5 /* beaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BAA18A548C50090F2A5 /* beaker@2x.png */; };
+		A4EB6BB018A548C50090F2A5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BAB18A548C50090F2A5 /* Icon.png */; };
+		A4EB6BB118A548C50090F2A5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BAC18A548C50090F2A5 /* Icon@2x.png */; };
+		A4EB6BB218A548C50090F2A5 /* skull-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BAD18A548C50090F2A5 /* skull-icon.png */; };
+		A4EB6BB418A5498A0090F2A5 /* skull-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BB318A5498A0090F2A5 /* skull-icon@2x.png */; };
+		A4EB6BBA18A565FF0090F2A5 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BB618A565FE0090F2A5 /* left-arrow.png */; };
+		A4EB6BBB18A565FF0090F2A5 /* left-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BB718A565FE0090F2A5 /* left-arrow@2x.png */; };
+		A4EB6BBC18A565FF0090F2A5 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BB818A565FE0090F2A5 /* right-arrow.png */; };
+		A4EB6BBD18A565FF0090F2A5 /* right-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BB918A565FE0090F2A5 /* right-arrow@2x.png */; };
+		A4EB6BC018A567470090F2A5 /* SlideOutToolStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB6BBF18A567470090F2A5 /* SlideOutToolStrip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +78,36 @@
 		A4155998189215CC002AE8DA /* GameOfLifeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeGrid.m; sourceTree = "<group>"; };
 		A4155999189215CC002AE8DA /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		A415599A189215CC002AE8DA /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
-		A415599D18922C49002AE8DA /* skull-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skull-icon.png"; path = "GameOfLife/skull-icon.png"; sourceTree = "<group>"; };
+		A4179E89189B43D8005420FB /* NSData+Cipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Cipher.h"; sourceTree = "<group>"; };
+		A4179E8A189B43D8005420FB /* NSData+Cipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Cipher.m"; sourceTree = "<group>"; };
+		A4179E8B189B43D8005420FB /* NSString+NiftyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NiftyAdditions.h"; sourceTree = "<group>"; };
+		A4179E8C189B43D8005420FB /* NSString+NiftyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NiftyAdditions.m"; sourceTree = "<group>"; };
+		A4179E8D189B43D8005420FB /* UIColor+Hexes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexes.h"; sourceTree = "<group>"; };
+		A4179E8E189B43D8005420FB /* UIColor+Hexes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexes.m"; sourceTree = "<group>"; };
+		A4179E8F189B43D8005420FB /* UIDevice+SimulatorCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SimulatorCheck.h"; sourceTree = "<group>"; };
+		A4179E90189B43D8005420FB /* UIDevice+SimulatorCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SimulatorCheck.m"; sourceTree = "<group>"; };
+		A4179E91189B43D8005420FB /* UILabel+TextMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+TextMagic.h"; sourceTree = "<group>"; };
+		A4179E92189B43D8005420FB /* UILabel+TextMagic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TextMagic.m"; sourceTree = "<group>"; };
+		A4179E93189B43D8005420FB /* UIView+FrameMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMagic.h"; sourceTree = "<group>"; };
+		A4179E94189B43D8005420FB /* UIView+FrameMagic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMagic.m"; sourceTree = "<group>"; };
+		A4179E96189B43D8005420FB /* iOS7MigrationBuddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS7MigrationBuddy.h; sourceTree = "<group>"; };
+		A4179E97189B43D8005420FB /* iOS7MigrationBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOS7MigrationBuddy.m; sourceTree = "<group>"; };
+		A4179E98189B43D8005420FB /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		A4179E99189B43D8005420FB /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		A4C079631893FF4900828554 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		A4C079641893FF4900828554 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		A4EB6BA918A548C50090F2A5 /* beaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beaker.png; sourceTree = "<group>"; };
+		A4EB6BAA18A548C50090F2A5 /* beaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beaker@2x.png"; sourceTree = "<group>"; };
+		A4EB6BAB18A548C50090F2A5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A4EB6BAC18A548C50090F2A5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		A4EB6BAD18A548C50090F2A5 /* skull-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull-icon.png"; sourceTree = "<group>"; };
+		A4EB6BB318A5498A0090F2A5 /* skull-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull-icon@2x.png"; sourceTree = "<group>"; };
+		A4EB6BB618A565FE0090F2A5 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
+		A4EB6BB718A565FE0090F2A5 /* left-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow@2x.png"; sourceTree = "<group>"; };
+		A4EB6BB818A565FE0090F2A5 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
+		A4EB6BB918A565FE0090F2A5 /* right-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow@2x.png"; sourceTree = "<group>"; };
+		A4EB6BBE18A567470090F2A5 /* SlideOutToolStrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideOutToolStrip.h; sourceTree = "<group>"; };
+		A4EB6BBF18A567470090F2A5 /* SlideOutToolStrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideOutToolStrip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +137,6 @@
 		A41559451891D314002AE8DA = {
 			isa = PBXGroup;
 			children = (
-				A415599D18922C49002AE8DA /* skull-icon.png */,
 				A41559571891D315002AE8DA /* GameOfLife */,
 				A41559791891D315002AE8DA /* GameOfLifeTests */,
 				A41559501891D315002AE8DA /* Frameworks */,
@@ -123,6 +167,10 @@
 		A41559571891D315002AE8DA /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				A4EB6BA818A548C50090F2A5 /* Resources */,
+				A4179E86189B43D8005420FB /* Artisan Toolbox */,
+				A4EB6BBE18A567470090F2A5 /* SlideOutToolStrip.h */,
+				A4EB6BBF18A567470090F2A5 /* SlideOutToolStrip.m */,
 				A4155997189215CC002AE8DA /* GameOfLifeGrid.h */,
 				A4155998189215CC002AE8DA /* GameOfLifeGrid.m */,
 				A4C079631893FF4900828554 /* Cell.h */,
@@ -166,6 +214,62 @@
 				A415597C1891D315002AE8DA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4179E86189B43D8005420FB /* Artisan Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				A4179E87189B43D8005420FB /* Categories */,
+				A4179E95189B43D8005420FB /* Utilities */,
+			);
+			path = "Artisan Toolbox";
+			sourceTree = "<group>";
+		};
+		A4179E87189B43D8005420FB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A4179E89189B43D8005420FB /* NSData+Cipher.h */,
+				A4179E8A189B43D8005420FB /* NSData+Cipher.m */,
+				A4179E8B189B43D8005420FB /* NSString+NiftyAdditions.h */,
+				A4179E8C189B43D8005420FB /* NSString+NiftyAdditions.m */,
+				A4179E8D189B43D8005420FB /* UIColor+Hexes.h */,
+				A4179E8E189B43D8005420FB /* UIColor+Hexes.m */,
+				A4179E8F189B43D8005420FB /* UIDevice+SimulatorCheck.h */,
+				A4179E90189B43D8005420FB /* UIDevice+SimulatorCheck.m */,
+				A4179E91189B43D8005420FB /* UILabel+TextMagic.h */,
+				A4179E92189B43D8005420FB /* UILabel+TextMagic.m */,
+				A4179E93189B43D8005420FB /* UIView+FrameMagic.h */,
+				A4179E94189B43D8005420FB /* UIView+FrameMagic.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A4179E95189B43D8005420FB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A4179E96189B43D8005420FB /* iOS7MigrationBuddy.h */,
+				A4179E97189B43D8005420FB /* iOS7MigrationBuddy.m */,
+				A4179E98189B43D8005420FB /* LocationHelper.h */,
+				A4179E99189B43D8005420FB /* LocationHelper.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A4EB6BA818A548C50090F2A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB6BB618A565FE0090F2A5 /* left-arrow.png */,
+				A4EB6BB718A565FE0090F2A5 /* left-arrow@2x.png */,
+				A4EB6BB818A565FE0090F2A5 /* right-arrow.png */,
+				A4EB6BB918A565FE0090F2A5 /* right-arrow@2x.png */,
+				A4EB6BA918A548C50090F2A5 /* beaker.png */,
+				A4EB6BAA18A548C50090F2A5 /* beaker@2x.png */,
+				A4EB6BAB18A548C50090F2A5 /* Icon.png */,
+				A4EB6BAC18A548C50090F2A5 /* Icon@2x.png */,
+				A4EB6BB318A5498A0090F2A5 /* skull-icon@2x.png */,
+				A4EB6BAD18A548C50090F2A5 /* skull-icon.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +320,7 @@
 				ORGANIZATIONNAME = "Artisan Mobile";
 				TargetAttributes = {
 					A415594D1891D315002AE8DA = {
-						DevelopmentTeam = BS9275W5J9;
+						DevelopmentTeam = SJ3G36B276;
 					};
 					A41559711891D315002AE8DA = {
 						TestTargetID = A415594D1891D315002AE8DA;
@@ -248,10 +352,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A41559681891D315002AE8DA /* Main_iPad.storyboard in Resources */,
-				A415599E18922C49002AE8DA /* skull-icon.png in Resources */,
+				A4EB6BBC18A565FF0090F2A5 /* right-arrow.png in Resources */,
+				A4EB6BBB18A565FF0090F2A5 /* left-arrow@2x.png in Resources */,
+				A4EB6BB118A548C50090F2A5 /* Icon@2x.png in Resources */,
+				A4EB6BBA18A565FF0090F2A5 /* left-arrow.png in Resources */,
 				A415596D1891D315002AE8DA /* Images.xcassets in Resources */,
+				A4EB6BAF18A548C50090F2A5 /* beaker@2x.png in Resources */,
+				A4EB6BBD18A565FF0090F2A5 /* right-arrow@2x.png in Resources */,
 				A41559651891D315002AE8DA /* Main_iPhone.storyboard in Resources */,
 				A415595C1891D315002AE8DA /* InfoPlist.strings in Resources */,
+				A4EB6BB018A548C50090F2A5 /* Icon.png in Resources */,
+				A4EB6BAE18A548C50090F2A5 /* beaker.png in Resources */,
+				A4EB6BB218A548C50090F2A5 /* skull-icon.png in Resources */,
+				A4EB6BB418A5498A0090F2A5 /* skull-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +384,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C079651893FF4900828554 /* Cell.m in Sources */,
+				A4179E9E189B43D8005420FB /* UIDevice+SimulatorCheck.m in Sources */,
+				A4179E9C189B43D8005420FB /* NSString+NiftyAdditions.m in Sources */,
 				A415599B189215CC002AE8DA /* GameOfLifeGrid.m in Sources */,
 				A415599C189215CC002AE8DA /* MainScreenViewController.m in Sources */,
+				A4179E9F189B43D8005420FB /* UILabel+TextMagic.m in Sources */,
+				A4179EA0189B43D8005420FB /* UIView+FrameMagic.m in Sources */,
 				A41559621891D315002AE8DA /* AppDelegate.m in Sources */,
 				A415595E1891D315002AE8DA /* main.m in Sources */,
+				A4179E9B189B43D8005420FB /* NSData+Cipher.m in Sources */,
+				A4179EA2189B43D8005420FB /* LocationHelper.m in Sources */,
+				A4EB6BC018A567470090F2A5 /* SlideOutToolStrip.m in Sources */,
+				A4179E9D189B43D8005420FB /* UIColor+Hexes.m in Sources */,
+				A4179EA1189B43D8005420FB /* iOS7MigrationBuddy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,13 +533,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott WASSERMAN (3JRXTM346N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameOfLife/GameOfLife-Prefix.pch";
 				INFOPLIST_FILE = "GameOfLife/GameOfLife-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17BDE3C7-AF8A-4F19-87A5-2C62BD2654FB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -433,7 +555,7 @@
 				GCC_PREFIX_HEADER = "GameOfLife/GameOfLife-Prefix.pch";
 				INFOPLIST_FILE = "GameOfLife/GameOfLife-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17BDE3C7-AF8A-4F19-87A5-2C62BD2654FB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -18,6 +18,7 @@
     UIView *gridView;
     int randomFactor;
     int age;
+    BOOL growing;
 }
 
 -(id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame;
@@ -26,4 +27,7 @@
 -(void)nextGeneration;
 -(void)killCellAtRow:(int)row column:(int)column;
 -(void)reviveCellAtRow:(int)row column:(int)column;
+- (void)startGrowing;
+- (void)stopGrowing;
+- (int)getAge;
 @end
