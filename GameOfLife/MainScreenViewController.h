@@ -23,6 +23,7 @@
     int deathBoxOffset;
     UIImageView *deathBoxView;
     UIButton *deathBoxButtonOverlay;
+    
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;

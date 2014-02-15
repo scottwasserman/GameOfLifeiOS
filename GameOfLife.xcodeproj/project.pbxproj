@@ -31,6 +31,9 @@
 		A4179EA0189B43D8005420FB /* UIView+FrameMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E94189B43D8005420FB /* UIView+FrameMagic.m */; };
 		A4179EA1189B43D8005420FB /* iOS7MigrationBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E97189B43D8005420FB /* iOS7MigrationBuddy.m */; };
 		A4179EA2189B43D8005420FB /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4179E99189B43D8005420FB /* LocationHelper.m */; };
+		A445748418AEA5E400ECCF15 /* armageddon.sks in Resources */ = {isa = PBXBuildFile; fileRef = A445748218AEA5E400ECCF15 /* armageddon.sks */; };
+		A445748518AEA5E400ECCF15 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A445748318AEA5E400ECCF15 /* spark.png */; };
+		A445748718AEA6EB00ECCF15 /* skull-icon-with-alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = A445748618AEA6EB00ECCF15 /* skull-icon-with-alpha.png */; };
 		A4C079651893FF4900828554 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C079641893FF4900828554 /* Cell.m */; };
 		A4EB6BAE18A548C50090F2A5 /* beaker.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BA918A548C50090F2A5 /* beaker.png */; };
 		A4EB6BAF18A548C50090F2A5 /* beaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EB6BAA18A548C50090F2A5 /* beaker@2x.png */; };
@@ -94,6 +97,9 @@
 		A4179E97189B43D8005420FB /* iOS7MigrationBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOS7MigrationBuddy.m; sourceTree = "<group>"; };
 		A4179E98189B43D8005420FB /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
 		A4179E99189B43D8005420FB /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
+		A445748218AEA5E400ECCF15 /* armageddon.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = armageddon.sks; sourceTree = "<group>"; };
+		A445748318AEA5E400ECCF15 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		A445748618AEA6EB00ECCF15 /* skull-icon-with-alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull-icon-with-alpha.png"; sourceTree = "<group>"; };
 		A4C079631893FF4900828554 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		A4C079641893FF4900828554 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		A4EB6BA918A548C50090F2A5 /* beaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beaker.png; sourceTree = "<group>"; };
@@ -137,6 +143,8 @@
 		A41559451891D314002AE8DA = {
 			isa = PBXGroup;
 			children = (
+				A445748218AEA5E400ECCF15 /* armageddon.sks */,
+				A445748318AEA5E400ECCF15 /* spark.png */,
 				A41559571891D315002AE8DA /* GameOfLife */,
 				A41559791891D315002AE8DA /* GameOfLifeTests */,
 				A41559501891D315002AE8DA /* Frameworks */,
@@ -258,6 +266,7 @@
 		A4EB6BA818A548C50090F2A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A445748618AEA6EB00ECCF15 /* skull-icon-with-alpha.png */,
 				A4EB6BB618A565FE0090F2A5 /* left-arrow.png */,
 				A4EB6BB718A565FE0090F2A5 /* left-arrow@2x.png */,
 				A4EB6BB818A565FE0090F2A5 /* right-arrow.png */,
@@ -362,7 +371,10 @@
 				A41559651891D315002AE8DA /* Main_iPhone.storyboard in Resources */,
 				A415595C1891D315002AE8DA /* InfoPlist.strings in Resources */,
 				A4EB6BB018A548C50090F2A5 /* Icon.png in Resources */,
+				A445748718AEA6EB00ECCF15 /* skull-icon-with-alpha.png in Resources */,
 				A4EB6BAE18A548C50090F2A5 /* beaker.png in Resources */,
+				A445748418AEA5E400ECCF15 /* armageddon.sks in Resources */,
+				A445748518AEA5E400ECCF15 /* spark.png in Resources */,
 				A4EB6BB218A548C50090F2A5 /* skull-icon.png in Resources */,
 				A4EB6BB418A5498A0090F2A5 /* skull-icon@2x.png in Resources */,
 			);

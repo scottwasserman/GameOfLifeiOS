@@ -1,0 +1,6 @@
+*~.nib
+.DS_Store
+# Xcode
+build/
+Artwork/
+

@@ -11,6 +11,7 @@
 #import "UIView+FrameMagic.h"
 #import "UILabel+TextMagic.h"
 #import "SlideOutToolStrip.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MainScreenViewController ()
 
@@ -50,7 +51,9 @@ static float delayBetweenGenerations = 0.1;
     [grid startGrowing];
     [toolStrip setGenerationLabel:[grid getAge]];
     [self nextGeneration];
+    
 }
+
 
 #pragma mark -
 #pragma mark grid lifecycle methods
