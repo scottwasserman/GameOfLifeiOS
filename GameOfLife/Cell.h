@@ -39,4 +39,5 @@ typedef enum {
 -(void)kill;
 -(void)revive;
 -(void)age;
+-(void)destroy;
 @end

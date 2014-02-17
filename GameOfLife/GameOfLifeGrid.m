@@ -12,7 +12,7 @@
 
 @implementation GameOfLifeGrid
 
--(id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame
+- (id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame
 {
     self = [super init];
     if (self)
@@ -22,7 +22,7 @@
         rows = trunc(gridView.frame.size.width/sizeOfSquare);
         columns = trunc(gridView.frame.size.height/sizeOfSquare);
         gridArray = [[NSMutableArray alloc] initWithCapacity:(rows*columns)];
-        randomFactor = 10;
+        randomFactor = 20;
         [self buildCellArray];
         growing = NO;
     }
@@ -32,7 +32,20 @@
 #pragma mark -
 #pragma mark grid lifecycle methods
 
--(void)buildCellArray
+- (void)destroyLifeInGrid
+{
+    [self stopGrowing];
+    age = 0;
+    for (int column=0;column < columns;column++)
+    {
+        for (int row=0;row < rows;row++)
+        {
+            [self destroyCellAtRow:row column:column];
+        }
+    }
+}
+
+- (void)buildCellArray
 {
     age = 0;
     
@@ -48,11 +61,16 @@
     }
 }
 
--(void)randomize
+- (void)randomize
 {
-    for (int column=0;column < columns;column++)
+    [self randomizeFromRow:0 toRow:rows fromColumn:0 toColumn:columns];
+}
+
+- (void)randomizeFromRow:(int)fromRow toRow:(int)toRow fromColumn:(int)fromColumn toColumn:(int)toColumn
+{
+    for (int column=fromColumn;column < toColumn;column++)
     {
-        for (int row=0;row < rows;row++)
+        for (int row=fromRow;row < toRow;row++)
         {
             int on = arc4random() % randomFactor;
             
@@ -66,6 +84,7 @@
             }
         }
     }
+
 }
 
 - (void)nextGeneration
@@ -195,52 +214,67 @@ row | | | |
     return age;
 }
 
--(void)birthCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+- (BOOL)isGrowing
+{
+    return growing;
+}
+
+- (void)destroyCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+{
+    [((Cell*)[array objectAtIndex:row + (column * rows)]) destroy];
+}
+
+- (void)birthCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
     [((Cell*)[array objectAtIndex:row + (column * rows)]) birth];
 }
 
--(void)ageCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+- (void)ageCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
     [((Cell*)[array objectAtIndex:row + (column * rows)]) age];
 }
 
--(void)reviveCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+- (void)reviveCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
     [((Cell*)[array objectAtIndex:row + (column * rows)]) revive];
 }
 
--(void)killCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+- (void)killCellAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
     [((Cell*)[array objectAtIndex:row + (column * rows)]) kill];
 }
 
--(BOOL)cellIsAliveAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
+- (BOOL)cellIsAliveAtRow:(int)row column:(int)column andArray:(NSMutableArray*)array
 {
     return [((Cell*)[array objectAtIndex:row + (column * rows)]) isAlive];
 }
 
--(void)birthCellAtRow:(int)row column:(int)column
+- (void)destroyCellAtRow:(int)row column:(int)column
+{
+    [self destroyCellAtRow:row column:column andArray:gridArray];
+}
+
+- (void)birthCellAtRow:(int)row column:(int)column
 {
     [self birthCellAtRow:row column:column andArray:gridArray];
 }
 
--(void)ageCellAtRow:(int)row column:(int)column
+- (void)ageCellAtRow:(int)row column:(int)column
 {
     [self ageCellAtRow:row column:column andArray:gridArray];
 }
 
--(void)reviveCellAtRow:(int)row column:(int)column
+- (void)reviveCellAtRow:(int)row column:(int)column
 {
     [self reviveCellAtRow:row column:column andArray:gridArray];
 }
 
--(void)killCellAtRow:(int)row column:(int)column
+- (void)killCellAtRow:(int)row column:(int)column
 {
     [self killCellAtRow:row column:column andArray:gridArray];
 }
 
--(BOOL)cellIsAliveAtRow:(int)row column:(int)column
+- (BOOL)cellIsAliveAtRow:(int)row column:(int)column
 {
     return [self cellIsAliveAtRow:row column:column andArray:gridArray];
 }
@@ -248,7 +282,7 @@ row | | | |
 #pragma mark -
 #pragma mark grid view methods
 
--(UIView *)getGridView
+- (UIView *)getGridView
 {
     return gridView;
 }

@@ -13,9 +13,9 @@
 @implementation SlideOutToolStrip
 static CGFloat leftOffScreenWidth = 10;
 static CGFloat toolstripHeight = 80;
-static CGFloat rightPadding = 30;
+static CGFloat rightPadding = 5;
 static CGFloat bottomPadding = 10;
-static CGFloat tabWidth = 20;
+static CGFloat tabWidth = 30;
 
 - (id)initWithParentView:(UIView *)view
 {
@@ -44,7 +44,7 @@ static CGFloat tabWidth = 20;
     
     UIView *tab = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - tabWidth, 0, tabWidth, self.frame.size.height)];
     tab.backgroundColor = [UIColor blackColor];
-    tab.alpha = 0.2;
+    tab.alpha = 0.3;
     [self addSubview:tab];
     
     rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"right-arrow.png"]];
@@ -60,18 +60,27 @@ static CGFloat tabWidth = 20;
     [self addSubview:leftArrow];
     leftArrow.hidden = YES;
     
-    UIButton *tabButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    tabButton = [UIButton buttonWithType:UIButtonTypeCustom];
     tabButton.frame = tab.frame;
     tabButton.backgroundColor = [UIColor clearColor];
     [tabButton addTarget:self action:@selector(toggleToolStrip:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tabButton];
     
-    generationCounterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,5,self.frame.size.width - tabWidth - 5,20)];
-    generationCounterLabel.backgroundColor = [UIColor clearColor];
-    generationCounterLabel.font = [UIFont boldSystemFontOfSize:12];
-    generationCounterLabel.textAlignment = NSTextAlignmentRight;
-    generationCounterLabel.textColor = [UIColor whiteColor];
-    [self addSubview:generationCounterLabel];
+}
+
+- (void)setToolView:(UIView *)view
+{
+    if (toolView)
+    {
+        [toolView removeFromSuperview];
+    }
+    
+    [self addSubview:view];
+}
+
+- (CGRect)getToolViewFrame
+{
+    return CGRectMake(0, 0, tabButton.frame.origin.x , self.frame.size.height);
 }
 
 - (void)toggleToolStrip:(id)sender
@@ -117,11 +126,6 @@ static CGFloat tabWidth = 20;
     [self setX:(leftOffScreenWidth * -1)];
     
     [UIView commitAnimations];
-}
-
-- (void)setGenerationLabel:(int)generationNumber
-{
-    generationCounterLabel.text = [NSString stringWithFormat:@"Age: %i",generationNumber];
 }
 
 @end

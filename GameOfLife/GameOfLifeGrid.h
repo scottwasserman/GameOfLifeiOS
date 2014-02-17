@@ -21,13 +21,16 @@
     BOOL growing;
 }
 
--(id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame;
--(UIView *)getGridView;
--(void)randomize;
--(void)nextGeneration;
--(void)killCellAtRow:(int)row column:(int)column;
--(void)reviveCellAtRow:(int)row column:(int)column;
+- (id)initWithSquareSize:(int)squareSize andFrame:(CGRect)frame;
+- (UIView *)getGridView;
+- (void)randomize;
+- (void)randomizeFromRow:(int)fromRow toRow:(int)toRow fromColumn:(int)fromColumn toColumn:(int)toColumn;
+- (void)nextGeneration;
+- (void)killCellAtRow:(int)row column:(int)column;
+- (void)reviveCellAtRow:(int)row column:(int)column;
 - (void)startGrowing;
 - (void)stopGrowing;
+- (BOOL)isGrowing;
+- (void)destroyLifeInGrid;
 - (int)getAge;
 @end

@@ -28,16 +28,13 @@
 
 - (CGSize)actualTextSizeConstrainedByWidth:(CGFloat)width andHeight:(CGFloat)height
 {
-    return [self.text sizeWithFont:self.font
-                 constrainedToSize:CGSizeMake(width,height)
-                     lineBreakMode:self.lineBreakMode];
+    
+    return [self.text boundingRectWithSize:CGSizeMake(width,height) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName:self.font} context:nil].size;
 }
 
 - (CGSize)actualTextSizeWithString:(NSString *)stringToSize
 {
-    return [stringToSize sizeWithFont:self.font
-                    constrainedToSize:CGSizeMake(self.frame.size.width,self.frame.size.height)
-                        lineBreakMode:self.lineBreakMode];
+    return [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width,self.frame.size.height) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName:self.font} context:nil].size;
 }
 
 - (void)setTextAndResizeFrame:(NSString *)text
@@ -77,9 +74,17 @@
 
 - (int)numberOfLinesToPad
 {
-    CGSize fontSize = [self.text sizeWithFont:self.font];
+    CGSize fontSize = [self.text sizeWithAttributes:@{NSFontAttributeName:self.font}];
     CGSize actualSize = [self actualTextSize];
-    return (self.frame.size.height - actualSize.height) / fontSize.height;
+    int numberOfLinesToPad =  trunc((self.frame.size.height - actualSize.height) / fontSize.height);
+    if (numberOfLinesToPad > 0)
+    {
+        return numberOfLinesToPad;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 - (void)alignTop

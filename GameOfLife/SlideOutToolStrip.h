@@ -12,10 +12,14 @@
 {
     UILabel *generationCounterLabel;
     UIView *parentView;
+    UIView *toolView;
+    UIButton *tabButton;
     UIImageView *rightArrow;
     UIImageView *leftArrow;
+    UIView *overlayView;
 }
 
 - (id)initWithParentView:(UIView *)view;
-- (void)setGenerationLabel:(int)generationNumber;
+- (void)setToolView:(UIView *)view;
+- (CGRect)getToolViewFrame;
 @end

@@ -57,9 +57,10 @@
     age++;
     if (view.alpha < 1)
     {
-        view.alpha = view.alpha + 0.1;
+        view.alpha = view.alpha + 0.05;
     }
     
+    /*
     if (age > 10)
     {
         view.alpha = 1;
@@ -77,6 +78,7 @@
         view.alpha = 1;
         [self setColor:green];
     }
+     */
 }
 
 -(void)birth
@@ -86,6 +88,16 @@
     age = 0;
     deaths = 0;
     alive = YES;
+}
+
+-(void)destroy
+{
+    view.hidden = YES;
+    [self resetAlpha];
+    age = 0;
+    deaths = 0;
+    alive = NO;
+    [self setColor:initialColorOfCell];
 }
 
 #pragma mark -

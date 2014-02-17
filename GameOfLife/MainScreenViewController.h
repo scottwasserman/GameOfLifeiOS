@@ -19,11 +19,19 @@
     CGFloat numberOfHorizontalSquares;
     CGFloat numberOfVerticalSquares;
     UIImageView *rightArrow;
-    int deathBoxSize;
-    int deathBoxOffset;
-    UIImageView *deathBoxView;
-    UIButton *deathBoxButtonOverlay;
+    int deathLifeBoxSize;
+    int deathLifeBoxOffset;
+    UIImageView *deathLifeBoxView;
+    UIButton *deathLifeBoxButtonOverlay;
+    BOOL needToRestartGrowing;
     
+    // For toolbar
+    UILabel *generationCounterLabel;
+    UIButton *playButton;
+    UIButton *pauseButton;
+    UIImageView *arrowUnderLeaves;
+    UIImageView *arrowUnderSkull;
+    BOOL inKillMode;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
