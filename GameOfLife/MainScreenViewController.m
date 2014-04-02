@@ -65,6 +65,8 @@ static float delayBetweenGenerations = 0.1;
 
 - (void)armageddon
 {
+    [self pauseGrowing];
+    
     CATransition* transition = [CATransition animation];
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     transition.duration = 1.0f;
@@ -73,7 +75,6 @@ static float delayBetweenGenerations = 0.1;
     [grid.getGridView.layer addAnimation:transition forKey:kCATransition];
     
     [grid destroyLifeInGrid];
-    [self pauseGrowing];
     
     [UIView commitAnimations];
 }
